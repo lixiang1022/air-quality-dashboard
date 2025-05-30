@@ -1,3 +1,4 @@
+import os
 import dash
 from dash import dcc, html, Input, Output
 import pandas as pd
@@ -5,6 +6,7 @@ import plotly.express as px
 
 df = pd.read_csv("air_quality_cleaned.csv")
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     html.H1("中国城市空气质量可视化"),
@@ -54,4 +56,5 @@ def update_chart(selected_city, aqi_range):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))  # 动态获取 Render 的端口
+    app.run(host="0.0.0.0", port=port, debug=False)
