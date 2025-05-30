@@ -47,7 +47,7 @@ def update_chart(selected_city, aqi_range):
     fig = px.scatter(
         filtered,
         x='PM2.5(μg/m^3)', y='AQI',
-        color='PM10(μg/m^3)', size='NO2(μg/m^3）',
+        color='PM10(μg/m^3)', size='NO2(μg/m^3)',
         hover_name='city',
         title=f"{selected_city} AQI 与 PM2.5/PM10/NO2 关系图",
         labels={'PM2.5(μg/m^3)': 'PM2.5(μg/m³)', 'AQI': '空气质量指数'}
