@@ -3,7 +3,7 @@ from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv("air_quality.csv")
+df = pd.read_csv("air_quality_cleaned.csv")
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
